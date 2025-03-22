@@ -8,12 +8,12 @@ This project implements a fully automated DevOps pipeline for a file upload web 
 - Jenkins – CI/CD automation.
 - Amazon S3 – Cloud storage.
 - Python (Flask) – Backend framework.
-- HTML/CSS – Frontend  
+- HTML – Frontend  
  
 **Project Workflow**    
-     1.	Infrastructure Provisioning with Terraform
-	•	Terraform is used to create an Amazon S3 bucket with predefined security policies.
-	•	The S3 bucket serves as cloud storage for uploaded user files.
+### 1.Infrastructure Provisioning with Terraform
+- Terraform is used to create an Amazon S3 bucket with predefined security policies.
+- The S3 bucket serves as cloud storage for uploaded user files.
 	2.	Web Application Development (Python + HTML)
 	•	A Flask-based backend processes file uploads and interacts with AWS S3 using the boto3 SDK.
 	•	The HTML frontend provides a simple interface for users to upload files.
