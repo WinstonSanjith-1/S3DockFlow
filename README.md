@@ -1,17 +1,17 @@
-Project Overview
+**Project Overview**
 
-This project implements a fully automated DevOps pipeline for a file upload web application, integrating Terraform, Docker, and Jenkins running locally to streamline infrastructure provisioning, containerization, and CI/CD automation. The application allows users to upload files via a web interface, which are then securely stored in an Amazon S3 bucket.
+This project implements a fully automated DevOps pipeline for a file upload web application, integrating Terraform, Docker, and Jenkins running locally to streamline infrastructure provisioning, containerization, and CI/CD automation. The application allows users to upload files via a web interface, which are then securely stored in an Amazon S3 bucket.  
 
-Key Technologies & Tools
-	•	Terraform – Infrastructure as Code.
-	•	Docker – Containerization.
-	•	Jenkins – CI/CD automation.
-	•	Amazon S3 – Cloud storage.
-	•	Python (Flask) – Backend framework.
-	•	HTML/CSS – Frontend
-
-Project Workflow
-	1.	Infrastructure Provisioning with Terraform
+**Key Technologies & Tools**
+	-	Terraform – Infrastructure as Code.
+	-	Docker – Containerization.
+	-	Jenkins – CI/CD automation.
+	-	Amazon S3 – Cloud storage.
+	-	Python (Flask) – Backend framework.
+	-	HTML/CSS – Frontend  
+ 
+**Project Workflow**    
+     1.	Infrastructure Provisioning with Terraform
 	•	Terraform is used to create an Amazon S3 bucket with predefined security policies.
 	•	The S3 bucket serves as cloud storage for uploaded user files.
 	2.	Web Application Development (Python + HTML)
