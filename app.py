@@ -4,13 +4,11 @@ import os
 
 app = Flask(__name__)
 
-# AWS S3 Configuration
 AWS_REGION = "ap-south-1"
 S3_BUCKET = "winston-terraform-s3-bucket"  
 AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-# Initialize S3 client
 s3 = boto3.client(
     "s3",
     region_name=AWS_REGION,
