@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+    }
+    stages {
+       stage('Copy Files') {
+            steps {
+                sh 'rsync -av --exclude=".git" /Users/Sanjith/Desktop/s3-terraform/terraform-s3/* .'
+            }
+        }
+        stage('Terraform Init') {
+            steps {
+                sh '/opt/homebrew/bin/terraform init'
+            }
+        }
+        stage('Terraform Apply') {
+            steps {
+                sh '/opt/homebrew/bin/terraform apply -auto-approve'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh 'cd web-app && docker build -t s3-flask-app .'
+            }
+        }
+        stage('Run Docker Container') {
+            steps {
+                sh 'docker run -d -p 9090:9090 -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY s3-flask-app'
+            }
+        }
+    }
+}
